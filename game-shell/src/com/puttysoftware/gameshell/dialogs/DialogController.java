@@ -22,13 +22,13 @@ public abstract class DialogController implements ActionListener {
 	}
     }
 
-    public final void showAboutDialog() {
+    public final void showDialog() {
 	this.checkView();
-	this.view.showAboutDialog();
+	this.view.showDialog();
     }
 
-    protected final void hideAboutDialog() {
+    protected final void hideDialog() {
 	this.checkView();
-	this.view.hideAboutDialog();
+	this.view.hideDialog();
     }
 }

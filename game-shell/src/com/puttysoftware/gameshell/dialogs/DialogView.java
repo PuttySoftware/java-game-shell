@@ -14,37 +14,37 @@ import javax.swing.WindowConstants;
 
 final class DialogView {
     // Fields
-    private final JFrame aboutFrame;
+    private final JFrame theFrame;
 
     // Constructors
     DialogView() {
 	super();
-	this.aboutFrame = new JFrame();
+	this.theFrame = new JFrame();
     }
 
     // Methods
-    void showAboutDialog() {
-	this.aboutFrame.setVisible(true);
+    void showDialog() {
+	this.theFrame.setVisible(true);
     }
 
-    void hideAboutDialog() {
-	this.aboutFrame.setVisible(false);
+    void hideDialog() {
+	this.theFrame.setVisible(false);
     }
 
     void setUpGUI(final DialogModel model, final WeakReference<DialogController> controllerRef) {
-	this.aboutFrame.setTitle(model.getTitle());
-	this.aboutFrame.setIconImage(model.getSystemIcon());
-	final Container aboutPane = new Container();
+	this.theFrame.setTitle(model.getTitle());
+	this.theFrame.setIconImage(model.getSystemIcon());
+	final Container thePane = new Container();
 	final Container textPane = new Container();
 	final Container buttonPane = new Container();
 	final Container logoPane = new Container();
-	final JButton aboutOK = new JButton(model.getActionButtonText());
+	final JButton theOK = new JButton(model.getActionButtonText());
 	final JLabel miniLabel = new JLabel("", model.getMainImage(), SwingConstants.LEFT);
 	miniLabel.setLabelFor(null);
-	aboutOK.setDefaultCapable(true);
-	this.aboutFrame.getRootPane().setDefaultButton(aboutOK);
-	this.aboutFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
-	aboutPane.setLayout(new BorderLayout());
+	theOK.setDefaultCapable(true);
+	this.theFrame.getRootPane().setDefaultButton(theOK);
+	this.theFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+	thePane.setLayout(new BorderLayout());
 	logoPane.setLayout(new FlowLayout());
 	logoPane.add(miniLabel);
 	textPane.setLayout(new GridLayout(model.getMessageCount(), 1));
@@ -53,13 +53,13 @@ final class DialogView {
 	    textPane.add(new JLabel(message));
 	}
 	buttonPane.setLayout(new FlowLayout());
-	buttonPane.add(aboutOK);
-	aboutPane.add(logoPane, BorderLayout.WEST);
-	aboutPane.add(textPane, BorderLayout.CENTER);
-	aboutPane.add(buttonPane, BorderLayout.SOUTH);
-	this.aboutFrame.setResizable(false);
-	aboutOK.addActionListener(controllerRef.get());
-	this.aboutFrame.setContentPane(aboutPane);
-	this.aboutFrame.pack();
+	buttonPane.add(theOK);
+	thePane.add(logoPane, BorderLayout.WEST);
+	thePane.add(textPane, BorderLayout.CENTER);
+	thePane.add(buttonPane, BorderLayout.SOUTH);
+	this.theFrame.setResizable(false);
+	theOK.addActionListener(controllerRef.get());
+	this.theFrame.setContentPane(thePane);
+	this.theFrame.pack();
     }
 }

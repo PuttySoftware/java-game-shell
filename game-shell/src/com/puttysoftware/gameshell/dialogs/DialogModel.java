@@ -15,13 +15,13 @@ public final class DialogModel {
     private final List<String> messages;
 
     // Constructors
-    public DialogModel(final String dialogTitle, final String dialogActionButtonText, final Image dialogSystemIcon,
-	    final Icon dialogMainImage) {
+    public DialogModel(final String theTitle, final String theActionButtonText, final Image theSystemIcon,
+	    final Icon theMainImage) {
 	super();
-	this.title = dialogTitle;
-	this.actionButtonText = dialogActionButtonText;
-	this.systemIcon = dialogSystemIcon;
-	this.mainImage = dialogMainImage;
+	this.title = theTitle;
+	this.actionButtonText = theActionButtonText;
+	this.systemIcon = theSystemIcon;
+	this.mainImage = theMainImage;
 	this.messages = new ArrayList<>();
     }
 
