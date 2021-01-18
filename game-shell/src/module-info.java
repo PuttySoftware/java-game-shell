@@ -14,7 +14,7 @@ module com.puttysoftware.gameshell {
     requires transitive com.puttysoftware.polytable;
     requires transitive com.puttysoftware.storage;
     requires transitive com.puttysoftware.xio;
-    
+
     exports com.puttysoftware.gameshell;
     exports com.puttysoftware.gameshell.dialogs;
     exports com.puttysoftware.gameshell.loaders;

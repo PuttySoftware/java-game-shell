@@ -8,15 +8,16 @@ public abstract class MenuManagerShell {
 
     // Constructors
     public MenuManagerShell() {
-	this.menuBar = new JMenuBar();
+        this.menuBar = new JMenuBar();
     }
 
     // Methods
     public final JMenuBar getMenuBar() {
-	return this.menuBar;
+        return this.menuBar;
     }
 
     public abstract void populateMenuBar();
 
-    public abstract void updateMenuItemState(final boolean loaded, final boolean dirty);
+    public abstract void updateMenuItemState(final boolean loaded,
+            final boolean dirty);
 }
