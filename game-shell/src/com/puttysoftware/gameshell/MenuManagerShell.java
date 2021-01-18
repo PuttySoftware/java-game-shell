@@ -1,22 +1,22 @@
 package com.puttysoftware.gameshell;
 
-import javax.swing.JMenuBar;
+import javax.swing.JPanel;
 
 public abstract class MenuManagerShell {
     // Fields
-    protected final JMenuBar menuBar;
+    protected final JPanel menuContainer;
 
     // Constructors
     public MenuManagerShell() {
-        this.menuBar = new JMenuBar();
+        this.menuContainer = new JPanel();
     }
 
     // Methods
-    public final JMenuBar getMenuBar() {
-        return this.menuBar;
+    public final JPanel getMenuContainer() {
+        return this.menuContainer;
     }
 
-    public abstract void populateMenuBar();
+    public abstract void populateMenus();
 
     public abstract void updateMenuItemState(final boolean loaded,
             final boolean dirty);
