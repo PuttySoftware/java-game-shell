@@ -20,7 +20,7 @@ public abstract class ScreenController implements WindowListener {
     // Methods
     public final void showScreen() {
 	if (!this.viewReady) {
-	    this.view.setUpView(model, new WeakReference<>(this));
+	    this.view.setUpView(this.model, new WeakReference<>(this));
 	    this.viewReady = true;
 	}
 	this.view.showScreen();
@@ -28,7 +28,7 @@ public abstract class ScreenController implements WindowListener {
 
     protected final void hideScreen() {
 	if (!this.viewReady) {
-	    this.view.setUpView(model, new WeakReference<>(this));
+	    this.view.setUpView(this.model, new WeakReference<>(this));
 	    this.viewReady = true;
 	}
 	this.view.hideScreen();
