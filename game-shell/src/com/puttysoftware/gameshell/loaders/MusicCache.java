@@ -2,7 +2,7 @@ package com.puttysoftware.gameshell.loaders;
 
 import java.util.ArrayList;
 
-import com.puttysoftware.audio.ogg.OggFactory;
+import com.puttysoftware.audio.ogg.OggPlayer;
 
 final class MusicCache {
     // Fields
@@ -15,7 +15,7 @@ final class MusicCache {
     }
 
     // Methods
-    OggFactory getCachedMusic(final String name) {
+    OggPlayer getCachedMusic(final String name) {
         for (MusicCacheEntry mce : this.cache) {
             if (mce.getName().equals(name)) {
                 return mce.getMusic();
@@ -24,7 +24,7 @@ final class MusicCache {
         return null;
     }
 
-    void addToCache(final String name, final OggFactory music) {
+    void addToCache(final String name, final OggPlayer music) {
         this.cache.add(new MusicCacheEntry(music, name));
     }
 

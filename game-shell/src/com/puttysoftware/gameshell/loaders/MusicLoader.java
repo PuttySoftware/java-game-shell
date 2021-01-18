@@ -2,7 +2,7 @@ package com.puttysoftware.gameshell.loaders;
 
 import java.net.URL;
 
-import com.puttysoftware.audio.ogg.OggFactory;
+import com.puttysoftware.audio.ogg.OggPlayer;
 
 public final class MusicLoader {
     // Fields
@@ -17,16 +17,16 @@ public final class MusicLoader {
         this.musicCache = new MusicCache();
     }
 
-    public OggFactory getMusic(final String name) {
+    public OggPlayer getMusic(final String name) {
         // Try and get it from the cache
-        final OggFactory cachedMusic = this.musicCache.getCachedMusic(name);
+        final OggPlayer cachedMusic = this.musicCache.getCachedMusic(name);
         if (cachedMusic != null) {
             // Cache hit
             return cachedMusic;
         } else {
             // Cache miss
             final URL url = this.loadBase.getResource(this.loadPath + name);
-            return OggFactory.loadResource(url);
+            return OggPlayer.loadResource(url);
         }
     }
 
