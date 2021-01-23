@@ -17,7 +17,7 @@ public final class MusicLoader {
         this.musicCache = new MusicCache();
     }
 
-    public OggPlayer getMusic(final String name) {
+    public OggPlayer getLoopedMusic(final String name) {
         // Try and get it from the cache
         final OggPlayer cachedMusic = this.musicCache.getCachedMusic(name);
         if (cachedMusic != null) {
@@ -26,7 +26,20 @@ public final class MusicLoader {
         } else {
             // Cache miss
             final URL url = this.loadBase.getResource(this.loadPath + name);
-            return OggPlayer.loadResource(url);
+            return OggPlayer.loadLoopedResource(url);
+        }
+    }
+    
+    public OggPlayer getOneShotMusic(final String name) {
+        // Try and get it from the cache
+        final OggPlayer cachedMusic = this.musicCache.getCachedMusic(name);
+        if (cachedMusic != null) {
+            // Cache hit
+            return cachedMusic;
+        } else {
+            // Cache miss
+            final URL url = this.loadBase.getResource(this.loadPath + name);
+            return OggPlayer.loadOneShotResource(url);
         }
     }
 
