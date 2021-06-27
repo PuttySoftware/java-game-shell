@@ -29,7 +29,7 @@ public final class MusicLoader {
             return OggPlayer.loadLoopedResource(url);
         }
     }
-    
+
     public OggPlayer getOneShotMusic(final String name) {
         // Try and get it from the cache
         final OggPlayer cachedMusic = this.musicCache.getCachedMusic(name);
