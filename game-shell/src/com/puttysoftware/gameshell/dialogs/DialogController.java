@@ -9,9 +9,9 @@ public abstract class DialogController implements ActionListener {
     private DialogView view;
 
     // Constructors
-    protected DialogController(final DialogModel aboutModel) {
+    protected DialogController(final DialogModel dialogModel) {
         super();
-        this.model = aboutModel;
+        this.model = dialogModel;
     }
 
     // Methods
